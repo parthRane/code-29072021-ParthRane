@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        
+    </head>
+    <body background="C:\Users\prane2\Desktop\ParthR\bgImage.png">
+        <div class="container">
+            <div class="card bg-transparent text-white">
+                <div class="card-header text-center">BMI Calculator Coding Challenge</div>
+                <div class="card-body">
+                    <form class="w-75 m-auto" onsubmit="return false">
+                        <div class="form-group">
+                            <label>Weight(KG):</label>
+                            <input type="text" name="" placeholder="Enter your weight in KGs" required id="weight" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Height(Mtr):</label>
+                            <input type="text" name="" placeholder="Enter your height in Centimeters" required id="height" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>BMI:</label>
+                            <input type="text" name="" id="bmiValue" class="form-control" step="0.01">
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-success" onClick="getBmiValue()">Show BMI</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer text-center">Technical Assesment Round</div>
+            </div>
+        </div>
+        <script>
+            function getBmiValue(){
+                var weight = document.getElementById('weight').value;
+                var height = document.getElementById('height').value;
+                var height = height/100;
+                var newBmiValue= weight / Math.pow(height,2);
+                document.getElementById('bmiValue').value= newBmiValue.toFixed(2);
+                fetch("person.json")
+            }
+        </script>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    </body>
+</html>
